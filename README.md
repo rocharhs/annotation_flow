@@ -2,6 +2,12 @@
 
 A tool that helps the user to revise an annotated text dataset with a dynamic interface that minimizes noise on the revision process
 
+## Execution
+
+```bash
+uvicorn main:app --reload
+```
+
 ## Requirements
 The interface have two screens:
  * The first screen load a dataset, its just a drag&drop file
