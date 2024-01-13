@@ -5,7 +5,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #5a6770, #3b4852); /* Blue-gray gradient */
+    background: linear-gradient(to right, #465058, #4b7da5); /* Blue-gray gradient */
     color: #fff; /* White text */
     font-family: 'Roboto', sans-serif; /* Use your preferred font */
 }
@@ -16,4 +16,4 @@ body {
     padding: 20px;
     text-align: center;
     cursor: pointer;
-}
+}W
