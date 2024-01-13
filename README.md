@@ -9,13 +9,20 @@ uvicorn main:app --reload
 ```
 
 ## Requirements
-The interface have two screens:
+The interface have four screens:
  * The first screen load a dataset, its just a drag&drop file
-    * the file must be on jsonl format, each line must have two keys "text" and "class"
+    * the file must be on csv format with at least two columns and under 30 Mb
+    * The file should have at least one example of each class
+    * empty lines on the class are the ones to be annotated
     * ![image](https://github.com/rocharhs/annotation_flow/assets/6074339/13bb7e94-30cf-4fd9-9389-1b46257197f8)
+ * The second screen helps identify which column contains the text messages and which column contains the classes to annotate, also a "annotate" button that leads to the third screen
+ * The third screen is a loading screen. It displays a progress bar with the number of messages processed versus the total ex.: 190/2000 
 
- * The second screen display the next record from the jsonl to be revised
-   * The text is on a scrollable textbox and the class is the title of the box
+ * The forth screen displays the next record from the file to be revised
+   * The text is on a scrollable textbox 
+   * There is a keyboard image guide on the bottom-right corner
+   * There is a side bar with options
+     * one of the options is a checkbox called "revision mode", if enabled, lines that are already annotated may be presented
    * the user may use the arrow keys
      * right arrow accepts the classification as correct, it animates the process by painting the border of the box green and moving it right outside the screen and bringing a new one from the bottom
      * left arrow rejects the classification as wrong, it animates the process by painting the border of the box red and moving it left outside the screen and bringing a new one from the bottom
