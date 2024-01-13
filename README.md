@@ -12,6 +12,8 @@ uvicorn main:app --reload
 The interface have two screens:
  * The first screen load a dataset, its just a drag&drop file
     * the file must be on jsonl format, each line must have two keys "text" and "class"
+    * ![image](https://github.com/rocharhs/annotation_flow/assets/6074339/13bb7e94-30cf-4fd9-9389-1b46257197f8)
+
  * The second screen display the next record from the jsonl to be revised
    * The text is on a scrollable textbox and the class is the title of the box
    * the user may use the arrow keys
