@@ -24,4 +24,5 @@ body {
 #drop-area:hover {
     border: 2px dashed #2ecc71; /* White border */
     color:#2ecc71;
+    box-shadow: 0 4px 8px rgba(52, 75, 68, 0.37); /* Shadow effect */
 }
