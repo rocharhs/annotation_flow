@@ -50,19 +50,22 @@ function loadDataset(file) {
 document.addEventListener("dragover", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("drop-area").style.border = "2px dashed #668aec";
+    document.getElementById("drop-area").style.border = "2px dashed #2ecc71";
+    document.getElementById("drop-area").style.color = "#2ecc71";
 });
 
 document.addEventListener("dragleave", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById("drop-area").style.border = "2px dashed #fff";
+    document.getElementById("drop-area").style.border = "2px dashed #3498db";
+    document.getElementById("drop-area").style.color = "#3498db";
 });
 
 document.addEventListener("drop", function (e) {
     e.preventDefault();
 
-    document.getElementById("drop-area").style.border = "2px dashed #fff";
+    document.getElementById("drop-area").style.border = "2px dashed #3498db";
+    document.getElementById("drop-area").style.color = "#3498db";
 
     // Check if files are present in the drop event
     if (e.dataTransfer.files.length > 0) {

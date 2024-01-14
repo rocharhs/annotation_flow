@@ -5,15 +5,23 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #1f2122, #2a3f50); /* Blue-gray gradient */
-    color: #fff; /* White text */
+    background: #ecf0f1;
+    color: #3498db;
     font-family: 'Roboto', sans-serif; /* Use your preferred font */
 }
 
 #drop-area {
-    border: 2px dashed #fff; /* White border */
+    border: 2px dashed #3498db; /* White border */
+    background-color: #fff;
+    color: #3498db;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     cursor: pointer;
-}W
+    box-shadow: 0 4px 8px rgba(52, 52, 75, 0.37); /* Shadow effect */
+}
+
+#drop-area:hover {
+    border: 2px dashed #2ecc71; /* White border */
+    color:#2ecc71;
+}
