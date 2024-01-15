@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from routes import data
 
 app = FastAPI()
 
@@ -13,3 +14,4 @@ async def read_main():
     return open('static/index.html','r').read()
 
 # Your API routes can be added here
+app.include_router(data.router, prefix="/data", tags=["data"])

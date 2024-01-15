@@ -51,6 +51,35 @@ function loadDataset(file) {
     }
 }
 
+// Function to send file data to the backend
+function sendToBackend(data) {
+    // Update the URL to match your FastAPI endpoint
+    const apiUrl = '/data/process-data'; // Assuming the FastAPI endpoint is at this path
+
+    // Use fetch to send data to the FastAPI endpoint
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: data }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(responseData => {
+        console.log('Data sent to backend successfully:', responseData);
+        // Optionally, update the UI or perform other actions after successful backend interaction
+    })
+    .catch(error => {
+        console.error('Error sending data to backend:', error);
+        // Handle errors or provide user feedback as needed
+    });
+}
+
 // Function to parse JSON file
 function parseJSONFile(file) {
     const reader = new FileReader();
@@ -62,7 +91,7 @@ function parseJSONFile(file) {
             // Check if jsonData is an array of strings
             if (Array.isArray(jsonData) && jsonData.every(item => typeof item === 'string')) {
                 console.log("File is a JSON array of strings. Proceeding...");
-                alert("File is a JSON array of strings. Implement your logic here for string arrays.");
+                sendToBackend(jsonData)
             } else {
                 // Display an error message if JSON data doesn't match the expected format
                 console.log(ERROR_JSON_NOT_STRING_ARRAY);
